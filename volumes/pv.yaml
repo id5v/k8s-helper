@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: logs-pv
+spec:
+  capacity:
+    storage: 10Gi  # Размер хранилища, измените при необходимости
+  accessModes:
+    - ReadWriteOnce  # Доступ с одной ноды
+  hostPath:
+    path: "/var/log/k8s-cluster-logs"  # Локальный путь на хосте
